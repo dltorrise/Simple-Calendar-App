@@ -11,6 +11,7 @@ var fourteen = document.getElementById("hour-14")
 var fifteen = document.getElementById("hour-15")
 var sixteen = document.getElementById("hour-16")
 var seventeen = document.getElementById("hour-17")
+var block = document.querySelectorAll("row")
 
 
 
@@ -49,18 +50,23 @@ function setTime() {
     today = dayjs().format('MMM D, YYYY hh:mm a') //updates the variable today
     $('#time-display').text(today); //renders after it's been updated
 
-  }, 1000);
+  }, 60000); //updates every minute
 }
 
 function checkTime() {
-  time = dayjs().format('h') //military time
+  time = dayjs().format('H') //military time
   var times = [nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen] //array of objects
   console.log(times)
   for (var i=0; i < times.length; i++) { // for each element in the array return the hour as an integer
     var variable = parseInt(times[i].innerText)
-    console.log(variable)
+    // console.log(variable)
+    if (time==variable) {
+      times[i].classList.add("present")
+    }
   }
 }
+
+//still trying to figure out how to color blocks
 
 //if current hour < time
 //make it future
