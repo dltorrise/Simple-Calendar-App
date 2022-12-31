@@ -1,3 +1,8 @@
+//Finish up interval function
+//add save button
+//add local storage
+//add a background because this white is boring
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html. 
@@ -41,7 +46,6 @@ $(function () {
 var today = dayjs().format('MMM D, YYYY hh:mm a') //two digits for hour and a for displaying am or pm
 $('#time-display').text(today);
 
-setInterval(setTime, 60000); //calls the setTime function every second and this function is called when the page loads
 
 function setTime() {
   // Sets interval in variable
@@ -49,9 +53,10 @@ function setTime() {
     today = dayjs().format('MMM D, YYYY hh:mm a') //updates the variable today
     $('#time-display').text(today); //renders after it's been updated
 
-  }, 1000); //updates every minute
-  //actually not sure if this makes a difference
+  }, 1000); 
 }
+
+setTime() //calls setTime function when page is loaded
 
 //past is grey
 //present is red
@@ -77,8 +82,7 @@ function checkTime() {
   }
 }
 
-setInterval(checkTime, 60000)
-//update checkTime()
+setInterval(checkTime, 60000) //calls function every minute
 
 //if current hour < time
 //make it future
@@ -90,4 +94,5 @@ setInterval(checkTime, 60000)
 //getting time from id
 //somehow extract number from the id
 //create if statements to set attribute
-checkTime();
+
+
