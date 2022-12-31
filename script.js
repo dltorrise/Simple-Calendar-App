@@ -11,7 +11,6 @@ var fourteen = document.getElementById("hour-14")
 var fifteen = document.getElementById("hour-15")
 var sixteen = document.getElementById("hour-16")
 var seventeen = document.getElementById("hour-17")
-var block = document.querySelectorAll("row")
 
 
 
@@ -53,20 +52,30 @@ function setTime() {
   }, 60000); //updates every minute
 }
 
+//past is grey
+//present is red
+//future is green
+
 function checkTime() {
-  time = dayjs().format('H') //military time
+  time = dayjs().format('H') 
   var times = [nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen] //array of objects
   console.log(times)
+
   for (var i=0; i < times.length; i++) { // for each element in the array return the hour as an integer
-    var variable = parseInt(times[i].innerText)
-    // console.log(variable)
-    if (time==variable) {
+    var blockValue = parseInt(times[i].innerText)
+    if (blockValue<9) {
+      blockValue = blockValue + 12 // converts to military time
+    }
+    if (time==blockValue) {
       times[i].classList.add("present")
+    } else if (time<blockValue) { //current time is less time in block than its in future
+      times[i].classList.add("future")
+    } else {
+      times[i].classList.add("past")
     }
   }
 }
 
-//still trying to figure out how to color blocks
 
 //if current hour < time
 //make it future
