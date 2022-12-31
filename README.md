@@ -22,12 +22,13 @@ GIVEN I am using a daily planner to create a schedule
 WHEN I scroll down
 THEN I am presented with timeblocks for standard business hours
 WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
--check current time and make sure blocks are coded
+
 WHEN I click into a timeblock
 THEN I can enter an event
 WHEN I click the save button for that timeblock
+-event listener
 THEN the text for that event is saved in local storage
+-local storage
 WHEN I refresh the page
 THEN the saved events persist
 ```

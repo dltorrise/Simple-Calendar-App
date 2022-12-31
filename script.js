@@ -41,7 +41,7 @@ $(function () {
 var today = dayjs().format('MMM D, YYYY hh:mm a') //two digits for hour and a for displaying am or pm
 $('#time-display').text(today);
 
-setInterval(setTime, 1000); //calls the setTime function every second and this function is called when the page loads
+setInterval(setTime, 60000); //calls the setTime function every second and this function is called when the page loads
 
 function setTime() {
   // Sets interval in variable
@@ -49,7 +49,8 @@ function setTime() {
     today = dayjs().format('MMM D, YYYY hh:mm a') //updates the variable today
     $('#time-display').text(today); //renders after it's been updated
 
-  }, 60000); //updates every minute
+  }, 1000); //updates every minute
+  //actually not sure if this makes a difference
 }
 
 //past is grey
@@ -76,6 +77,8 @@ function checkTime() {
   }
 }
 
+setInterval(checkTime, 60000)
+//update checkTime()
 
 //if current hour < time
 //make it future
