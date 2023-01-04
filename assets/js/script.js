@@ -95,11 +95,11 @@ setInterval(checkTime, 60000) //recalls function every minute, so it should
 
 $(".saveBtn").on("click", function () {
   console.log(this)
-  var userInput = $(this).closest(".input-group").find(".description")[0].value;
-  var timeOfDay = $(this).closest(".input-group").parent().attr("id");
-  localStorage.setItem(timeOfDay, userInput);
-
+  var userInput = $(this).siblings(".description").val()
+  var timeOfDay = $(this).parent().attr("id")
+  localStorage.setItem(timeOfDay, userInput)
 })
+
 
 
 //should retrieve from local storage do I need to call function?
