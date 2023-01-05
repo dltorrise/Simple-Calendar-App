@@ -1,6 +1,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  background-color: hotpink;
 }
 
 textarea {
@@ -10,6 +11,17 @@ textarea {
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+}
+
+/*added so that words don't get confused by background, but not sure
+how to make white space thinner*/
+
+h1,
+h2,
+p
+ { 
+  text-align: center; 
+  background-color: white;
 }
 
 .description {
