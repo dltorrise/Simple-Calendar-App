@@ -1,7 +1,9 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  background-color: hotpink;
+  background-color: hotpink !important;
+  /*needed to add this because I think something in another
+  imported library is overwriting this */
 }
 
 textarea {
