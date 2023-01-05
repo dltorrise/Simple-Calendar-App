@@ -14,3 +14,5 @@ Screenshot:
 I received inspiration for local storage functions from my classmate Adam. 
 
 [His Github](https://github.com/Variegatedhuman)
+
+The photo in the background header was created by [catarchangel](https://www.123rf.com/profile_catarchangel)
